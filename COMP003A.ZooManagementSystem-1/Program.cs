@@ -26,17 +26,18 @@ namespace COMP003A.ZooManagementSystem_1
                         string lionName = Console.ReadLine();
                         Console.Write("Enter the Species of the lion: ");
                         string lionSpecies = Console.ReadLine();
-                        animals.Add(new lionName, lionSpecies);
+                        animals.Add(new Lion(lionName, lionSpecies);
                         Console.WriteLine("Lion added successfully!");
                         break;
                     case 2:
-                        AddParrot();
+                        Console.Write("Enter the name of the Parrot: ");
+
                         break;
                     case 3:
-                        ViewAnimals();
+                        
                         break;
                     case 4:
-                        Describe();
+                        
                         break;
                     case 5:
                         Console.WriteLine("\nGoodbye!");
