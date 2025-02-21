@@ -10,12 +10,15 @@ namespace COMP003A.ZooManagementSystem_1
     {
         private string _name;
         private string _species;
+        private int _age;
 
         public string Name { get; set; }
         public string Species { get; set; }
 
-        public virtual void MakeSound()
-        { 
-        }
+        public int Age { get; set; }
+
+        public abstract void MakeSound();
+        
+        
     }
 }

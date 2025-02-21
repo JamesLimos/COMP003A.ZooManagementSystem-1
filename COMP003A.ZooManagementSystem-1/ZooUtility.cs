@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace COMP003A.ZooManagementSystem_1
 {
-    class ZooUtility
+    public class ZooUtility
     {
-        public string DescribeAnimal(string name)
+        public static void DescribeAnimal(string name)
         {
-            return DescribeAnimal(name);
+            Console.WriteLine($"Animal Name: {name}");
         }
 
-        public string DescribeAnimal(string name, string species)
+        public static void DescribeAnimal(string name, string species)
         {
-            return DescribeAnimal(name) + DescribeAnimal(species); 
+            DescribeAnimal(name);
+            Console.WriteLine($"Animal Name: {name}, Species: {species}");
         }
 
-        public string DescribeAnimal(string name, string species, int age)
+        public static void DescribeAnimal(string name, string species, int age)
         {
-            return 5 + DescribeAnimal(name) + DescribeAnimal(species);
+            DescribeAnimal(name, species);
+            Console.WriteLine($"Animal Name: {name}, Species: {species}, Age: {age} years old");
         }
     }
 }
