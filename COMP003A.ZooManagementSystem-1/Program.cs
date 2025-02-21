@@ -1,5 +1,9 @@
-﻿using System.ComponentModel;
-using System.Xml.Serialization;
+﻿/* 
+Author: James Limos
+Course: COMP-003A
+Faculty: Jonathan Cruz
+Purpose: Zoo management system demonstrating inheritance, abstraction, polymorphism, and method overloading in C#
+*/
 
 namespace COMP003A.ZooManagementSystem_1
 {
@@ -23,7 +27,7 @@ namespace COMP003A.ZooManagementSystem_1
 
                 switch (choice)
                 {
-                    case 1:// Add Lion information
+                    case 1:
                         Console.Write("Enter the name of the Lion: ");
                         string lionName = Console.ReadLine();
                         Console.Write("Enter the species of the lion: ");
@@ -31,7 +35,7 @@ namespace COMP003A.ZooManagementSystem_1
                         animals.Add(new Lion(lionName, lionSpecies));
                         Console.WriteLine("\nLion added successfully!\n");
                         break;
-                    case 2:// Add Parrot information
+                    case 2:
                         Console.Write("Enter the name of the Parrot: ");
                         string parrotName = Console.ReadLine();
                         Console.Write("Enter the species of the Parrot: ");
@@ -39,17 +43,50 @@ namespace COMP003A.ZooManagementSystem_1
                         animals.Add(new Parrot(parrotName, parrotSpecies));
                         Console.WriteLine("\nParrot added successfully!\n");
                         break;
-                    case 3: // View animals 
+                    case 3:  
                         Console.WriteLine("Displaying all animals:\n");
                         foreach (Animal animal in animals)
                         {
                             animal.MakeSound();
                         }
                         break;
-                    case 4: // describe the animals
-                        
+                    case 4: 
+                        bool isRunning = true;
+
+                        while (isRunning)
+                        {
+                            Console.WriteLine("\nMenu");
+                            Console.WriteLine("1. Describe Name.");
+                            Console.WriteLine("2. Describe Name and Species.");
+                            Console.WriteLine("3. Describe Name, Species, and Age.");
+                            Console.WriteLine("4. Exit");
+                            Console.WriteLine("Your Choice: ");
+                            int utilityChoice = int.Parse(Console.ReadLine());
+                            switch (utilityChoice)
+                            {
+                                case 1:
+                                    Console.WriteLine("DescribeAnimal (name only):");
+                                    ZooUtility.DescribeAnimal("Simba");
+                                    break;
+                                case 2:
+                                    Console.WriteLine("DescribeAnimal (name and species):");
+                                    ZooUtility.DescribeAnimal("Polly", "Psittaciformes");
+                                    break;
+                                case 3:
+                                    Console.WriteLine("DescribeAnimal (name, species, and age):");
+                                    ZooUtility.DescribeAnimal("Charlie", "Elephant", 12);
+                                    break;
+                                case 4:
+                                    isRunning = false;
+                                    break;
+                                default:
+                                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                                    break;
+
+                            }
+                        }
                         break;
-                    case 5: // exit
+                    case 5: 
                         Console.WriteLine("\nGoodbye!");
                         return;
                     default:
